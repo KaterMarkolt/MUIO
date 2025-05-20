@@ -2,12 +2,12 @@
   "name": "muio",
   "version": "0.1.0",
   "private": true,
- "scripts": {
-  "dev": "next dev",
-  "build": "next build && netlify build",
-  "start": "next start",
-  "lint": "next lint"
-},
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && netlify build",
+    "start": "next start",
+    "lint": "next lint"
+  },
   "dependencies": {
     "next": "15.3.2",
     "react": "^19.0.0",
@@ -22,6 +22,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.3.2",
+    "netlify-cli": "^21.5.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
