@@ -9,20 +9,21 @@ export default function Home() {
   ];
 
   return (
-    <main className="p-4 space-y-4">
+  <main className="p-4 overflow-x-auto">
+    <div className="flex flex-row gap-4 min-w-max">
       {tiers.map((tier) => (
         <section
           key={tier.title}
-          className="rounded-xl p-4 text-white"
+          className="rounded-xl p-4 text-white w-[250px] flex-shrink-0"
           style={{ backgroundColor: tier.color }}
         >
-          <h2 className="text-xl font-bold">{tier.title}</h2>
-          <div className="min-h-[100px] mt-2 border border-white border-dashed rounded-md flex items-center justify-center opacity-60">
-            {/* В будущем сюда будут добавляться фильмы */}
+          <h2 className="text-xl font-bold text-center">{tier.title}</h2>
+          <div className="min-h-[120px] mt-2 border border-white border-dashed rounded-md flex items-center justify-center opacity-60">
             <span>Пока пусто</span>
           </div>
         </section>
       ))}
-    </main>
-  );
-}
+    </div>
+  </main>
+);
+
