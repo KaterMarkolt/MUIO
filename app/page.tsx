@@ -9,21 +9,21 @@ export default function Home() {
   ];
 
   return (
-  <main className="p-4 overflow-x-auto">
-    <div className="flex flex-row gap-4 min-w-max">
-      {tiers.map((tier) => (
-        <section
-          key={tier.title}
-          className="rounded-xl p-4 text-white w-[250px] flex-shrink-0"
-          style={{ backgroundColor: tier.color }}
-        >
-          <h2 className="text-xl font-bold text-center">{tier.title}</h2>
-          <div className="min-h-[120px] mt-2 border border-white border-dashed rounded-md flex items-center justify-center opacity-60">
-            <span>Пока пусто</span>
-          </div>
-        </section>
-      ))}
-    </div>
-  </main>
+    <main className="p-4 overflow-x-auto scrollbar-thin">
+      <div className="flex flex-row gap-4 min-w-max">
+        {tiers.map((tier) => (
+          <section
+            key={tier.title}
+            className="rounded-xl p-4 text-white w-[250px] min-h-[400px] flex-shrink-0 flex flex-col"
+            style={{ backgroundColor: tier.color }}
+          >
+            <h2 className="text-xl font-bold text-center mb-2">{tier.title}</h2>
+            <div className="flex-1 border border-white border-dashed rounded-md flex items-center justify-center opacity-60">
+              <span>Пока пусто</span>
+            </div>
+          </section>
+        ))}
+      </div>
+    </main>
   );
 }
