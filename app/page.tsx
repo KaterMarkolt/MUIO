@@ -6,9 +6,9 @@ import {
   PointerSensor,
   useSensor,
   useSensors,
+  DragEndEvent,
 } from '@dnd-kit/core';
-import {
-  arrayMove,
+import { 
   SortableContext,
   useSortable,
   verticalListSortingStrategy,
@@ -50,7 +50,7 @@ export default function Home() {
 
   const sensors = useSensors(useSensor(PointerSensor));
 
-  function handleDragEnd(event: any) {
+  function handleDragEnd(event: DragEndEvent) {
     const { active, over } = event;
     if (!over || active.id === over.id) return;
 
