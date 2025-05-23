@@ -8,18 +8,34 @@ export default function Home() {
     { title: 'ПОТРАЧЕННОГО ВРЕМЕНИ ЖАЛЬ', color: '#4B4B4B' },
   ];
 
+  const placeholderMovies = [
+    { title: 'Фильм 1' },
+    { title: 'Фильм 2' },
+    { title: 'Фильм 3' },
+  ];
+
   return (
-    <main className="p-4 overflow-x-auto scrollbar-thin">
-      <div className="flex flex-row gap-4 min-w-max">
+    <main className="p-4 overflow-x-auto">
+      <div className="grid grid-cols-6 gap-4 min-w-max">
         {tiers.map((tier) => (
           <section
             key={tier.title}
-            className="rounded-xl p-4 text-white w-[250px] min-h-[400px] flex-shrink-0 flex flex-col"
+            className="rounded-xl p-4 text-white flex flex-col items-center"
             style={{ backgroundColor: tier.color }}
           >
             <h2 className="text-xl font-bold text-center mb-2">{tier.title}</h2>
-            <div className="flex-1 border border-white border-dashed rounded-md flex items-center justify-center opacity-60">
-              <span>Пока пусто</span>
+            <div className="flex flex-col gap-4 w-full items-center">
+              {placeholderMovies.map((movie) => (
+                <div
+                  key={movie.title}
+                  className="w-full bg-black/20 p-2 rounded-lg shadow-md hover:bg-black/30 transition"
+                >
+                  <div className="aspect-[2/3] bg-white/20 rounded mb-2" />
+                  <div className="text-center text-sm font-semibold flex items-center justify-center gap-1">
+                    🎬 {movie.title}
+                  </div>
+                </div>
+              ))}
             </div>
           </section>
         ))}
